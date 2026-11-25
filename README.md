@@ -17,3 +17,6 @@ https://ubuntu.com/download/server (22.04)
 AI Agents on this server
 - Setup guide (Paperclip manager + guardian + local models): docs/agent-stack.md
 - Guardian that checks agent commands before they run: guardian/README.md
+
+MI50 16GB variant
+- Specs, differences from the 32GB card, BIOS and flashing, tuning, sources: MI50-16GB/README.md
