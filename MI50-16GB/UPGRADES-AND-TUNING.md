@@ -37,6 +37,13 @@ echo 180000000 | sudo tee /sys/class/drm/card1/device/hwmon/hwmon*/power1_cap
 # or: rocm-smi -d 1 --setpoweroverdrive 180
 ```
 
+To find the cap that suits each model, measure rather than guess: Argos's
+**Profiles -> Power** sets a cap (and optionally a top SCLK) per model profile
+while it runs, and llama-bench results there record watts and tokens per watt
+for each setting. In Docker it writes through fan-bridge
+(ilofanmonitorgpu's `/api/power`), which refuses a raise while a GPU's junction
+is at or above 95 C. Start the comparison at stock, 180 W and 150 W.
+
 Undervolting on Vega 20 uses the 3-point `OD_VDDC_CURVE` in `pp_od_clk_voltage` [S33]:
 
 ```bash
