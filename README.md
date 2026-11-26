@@ -19,4 +19,6 @@ AI Agents on this server
 - Guardian that checks agent commands before they run: guardian/README.md
 
 MI50 16GB variant
+- LLM setup (models, context, flags, power cap): MI50-16GB/SETUP.md
+- What is still left to check for MI50 LLM use (16GB and 32GB): docs/llm-checklist.md
 - Specs, differences from the 32GB card, BIOS and flashing, tuning, sources: MI50-16GB/README.md

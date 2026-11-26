@@ -66,3 +66,12 @@ not from reading the page itself.
 - **S46** https://www.accio.com/business/amd-mi50 (snippet): Alibaba listings ~$107, fan-cooled $129–133. Listings, not sales.
 - **S25** https://localaimaster.com/blog/amd-mi50-local-llm: a 32 GB-focused article (Sep 2026): 16 GB exists but most supply is 32 GB; eBay $500–650; mini-DP not driven by stock firmware; Pro VII cross-flash "reportedly" gives display; passive cooling; Vulkan vs ROCm benchmark; gfx906 absent from ROCm 7.14.
 - **S47** https://openclawdc.com/blog/cheapest-32gb-vram-gpu-2026/: MI50 32GB ~$600–830 asking (Sep 2026).
+
+## Setup and software (added 2026-11-26, for [SETUP.md](SETUP.md))
+
+- **S49** https://github.com/rayakame/llama.cpp-gfx906 (branch gfx906, commits 97d72a3 and 0e14dfa, tag gfx906-v0.7.1, 2026-11-25): Qwen3.8 27B on one MI50 32GB at 205 W with HBM pinned at 1180 MHz; six quants with MTP; +17% to +101% over mx-llama.cpp 557a6068f at one user; adds a Q8_0 planes GEMM from 256 columns; launches with `-lm dio`.
+- **S50** https://www.morphllm.com/best-ollama-models (modified 2026-11-11): gpt-oss 20B (MXFP4, 14 GB) as the 16 GB pick; Devstral 24B 14 GB; 32 GB tier Qwen3.6 27B, Qwen3-Coder 30B-A3B, GLM-4.7-Flash, Gemma 4 26B.
+- **S51** https://github.com/hermesbradgharrison/gfx906-hub (refreshed 2026-11-17): tracks 16 gfx906 forks; vLLM mobydick forks (KIntegrated v0.31, joochung v0.30 with MoE CPU offload for 16 GB cards, ai-infos TP4); links DByte308/mi50-p2p-fixes. nlzy/vllm-gfx906 archived 2026-02-20 (its README).
+- **S52** https://rocm.docs.amd.com/en/latest/release/versions.html and https://rocm.docs.amd.com/en/latest/about/release-notes.html: ROCm 10.2.0 released 2026-11-18; gfx906 is not mentioned.
+- **S53** https://gist.github.com/dc740/89f449a2f9ebbcd896b9c7f1f722b5a7 (2026-11-17): script that copies gfx906 rocBLAS kernels from the Arch rocblas package into a stock Ubuntu 26.04 ROCm 7 install.
+- **S37** (updated) https://llamaperf.com/gpu/amd-mi50-16gb, read 2026-11-26: Ornith1.5 9B Q4_0 175 / 1450 tok/s on one card; Qwen3.6 35B-A3B Q5_K_XL 49 tok/s on two cards (Vulkan); Qwen3.8 27B Q4_0 48 tok/s on two cards (patched, ROCm 7.14), 40–44 without the patches.
