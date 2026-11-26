@@ -25,14 +25,19 @@ measured from a cloud session.
       memory clock pinned at 1180 MHz. Check what your V420 cards run
       (`pp_dpm_mclk`), then try 1100 and 1180 MHz with a perplexity run to catch
       silent HBM errors.
-- [ ] **Upstream llama.cpp since the last sync (c9433313):** e38ea71 (#33045,
+- [x] **Upstream llama.cpp since the last sync (c9433313):** e38ea71 (#33045,
       ROCm: no tile FA kernel for head size 576 when the GQA ratio is not a
-      multiple of 4, which matters for MLA models like DeepSeek/GLM), plus
-      int-overflow fixes for MMF/MMVF offsets (#33044, #32965). #32901 (FA
-      data-loading refactor) is still the one that conflicts with the gfx906
-      tile rows and needs MI50 numbers before merging.
-- [ ] **ROCm 10.2.0** came out 2026-11-18 without gfx906. Decide whether the
-      next TheRock-gfx906 rebuild should move its pin to the 10.2 tag.
+      multiple of 4, for MLA models like DeepSeek/GLM), the MMF/MMVF offset
+      overflow fixes (#33044, #32965) and rayakame's router Connection-header
+      fix are in mx-llama.cpp-Rocm10 master since PR #6 (2026-11-26).
+      rayakame's Q8_0 planes GEMM is mx-llama.cpp's own repacked GEMM, which
+      the fork already has.
+- [ ] **#32901** (FA data-loading refactor) is still the one upstream change
+      that conflicts with the gfx906 tile rows and needs MI50 numbers before
+      merging.
+- [ ] **ROCm 10.2.0** came out 2026-11-18 without gfx906. Whether the next
+      TheRock-gfx906 rebuild should move its pin to the 10.2 tag is being
+      looked at in its own thread.
 - [ ] **vLLM:** nlzy/vllm-gfx906 is archived. If you want vLLM for
       multi-user serving, the maintained forks are the "mobydick" ones
       (KIntegrated, v0.31 base). Tracked at
