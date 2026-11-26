@@ -14,6 +14,7 @@ Researched in November 2026. Labels used in these files:
 
 | File | What's in it |
 |---|---|
+| [SETUP.md](SETUP.md) | **Start here to run LLMs:** card checks, power cap, models and quants that fit, context sizes, launch flags, mixing with 32 GB cards |
 | [SPECS-AND-DIFFERENCES.md](SPECS-AND-DIFFERENCES.md) | Full spec table for MI50 16GB, MI50 32GB, MI60, Radeon VII and Radeon Pro VII; IDs, part numbers, how to identify a card |
 | [BIOS.md](BIOS.md) | Known 16 GB VBIOS images, what cross-flashing does, amdvbflash usage, risks, recovery |
 | [UPGRADES-AND-TUNING.md](UPGRADES-AND-TUNING.md) | Cooling, power cap and undervolting, HBM overclocking, what fits in 16 GB, multi-card, common problems, 2026 prices |
