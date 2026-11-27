@@ -1,8 +1,8 @@
 # MI50 16GB
 
 Notes on the **16 GB** AMD Radeon Instinct MI50. The cards in this server are the
-**32 GB** MI50 running the V420 BIOS (`113-D1640200-043`). Those notes are in the
-[main README](../README.md) and the
+**32 GB** MI50 running the V420 BIOS (`113-D1640200-043`). Those notes are in
+[MI50-32GB/](../MI50-32GB/README.md) and the
 [evilJazz 32GB gist](https://gist.github.com/evilJazz/14a4c82a67f2c52a6bb5f9cea02f5e13).
 This folder covers only what is different about the 16 GB card, or what is still unknown.
 
